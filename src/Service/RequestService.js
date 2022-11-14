@@ -4,7 +4,7 @@ import abi from "./abi.json";
 class RequestService {
 
     web3 = new Web3("http://localhost:8545")
-    contract = new this.web3.eth.Contract(abi, "0x8A791620dd6260079BF849Dc5567aDC3F2FdC318")
+    contract = new this.web3.eth.Contract(abi, "0x6d925938Edb8A16B3035A4cF34FAA090f490202a")
 
     async register(_login, _name, _password, _address) {
         try{
@@ -43,7 +43,7 @@ class RequestService {
     }
 
     
-    async setAdmin(_address, _userAddress){
+    async setAdmin(_userAddress,_address){
                 
         try {
             return await this.contract.methods.setAdmin(_userAddress).send({from: _address})
@@ -70,6 +70,15 @@ class RequestService {
             console.log('Shop not found')
         }
     }
+    
+    async returnRequest(_address){
+        try{
+            return await this.contract.methods.returnRequest().call({from: _address})   
+        }catch(e){
+            console.log(e)
+            console.log('request not return')
+        }
+    }
 
     async emplreturn(_id, _address){
         return await this.contract.methods.emplereturn(_id).call({from: _address})
@@ -83,6 +92,23 @@ class RequestService {
             console.log(e)
         }
     }
+
+    async sendRequest(_shopId, _address){
+        try{
+            return await this.contract.methods.sendRequest(_shopId).send({from: _address})
+        }catch(e){
+            console.log(e)
+        }
+    }
+
+    async takeRequest(_index, _solut, _address){
+         try{
+            return await this.contract.methods.takeRequest(_index, _solut).send({from: _address})
+        }catch(e){
+            console.log(e)
+        }
+    }
+
 
     async adminToBuyer(_address){
         return await this.contract.methods.adminToBuyer().send({from: _address})
@@ -98,18 +124,6 @@ class RequestService {
 
     async buyerToSeller(_address){
         return await this.contract.methods.buyerToSeller().send({from: _address})
-    }
-
-    async sendRequest(_shopId, _address){
-        return await this.contract.methods.sendRequest(_shopId).send({from: _address})
-    }
-
-    async takeRequest(_index, _solut, _address){
-        return await this.contract.methods.takeRequest(_index, _solut).send({from: _address})
-    }
-
-    async returnRequest(_address){
-        return await this.contract.methods.returnRequest().call({from: _address})
     }
 
     async addComm(_text, _shopId, _point, _address){

@@ -9,8 +9,8 @@ export const SetAdmin = ({address}) => {
     const formSetAdmins = async (e) => {
 
         e.preventDefault();
-        const AdminSet = await RequestService.setAdmin(userAddress, address)
-        console.log(AdminSet)
+        await RequestService.setAdmin(userAddress, address)
+        alert('успешно')
 
     }
       

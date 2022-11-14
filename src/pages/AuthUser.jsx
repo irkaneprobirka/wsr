@@ -36,11 +36,6 @@ export const AuthUser = () => {
                         <input type="password" value={password} onChange={({target}) => setPassword(target.value)} className="form-control" id="exampleInputPassword"/>
                     </div>
 
-                    <div className="form-group w-25">
-                        <label htmlFor="exampleInputEmail1">address</label>
-                        <input type="text" value={address} onChange={({target}) => setAddress(target.value)} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
-                    </div>
-
                     <button type="submit" className="btn btn-primary">Submit</button>
             </form>
         </div>
