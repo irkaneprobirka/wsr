@@ -24,29 +24,30 @@ function App() {
 
   return (
     <div>
+      <h1>Регистрация</h1>
         <form onSubmit={formSubmitHandler}>
 
           
                 <div className="form-group w-25">
-                    <label htmlFor="exampleInputPassword1">login</label>
+                    <label htmlFor="exampleInputPassword1">Логин</label>
                     <input type="text" value={login} onChange={({target}) => setLogin(target.value)} className="form-control" id="exampleInputPassword1"/>
                 </div>
 
                 <div className="form-group w-25">
-                    <label htmlFor="exampleInputPassword1">name</label>
+                    <label htmlFor="exampleInputPassword1">Имя</label>
                     <input type="text" value={name} onChange={({target})=> setName(target.value)} className="form-control" id="exampleInputPassword1"/>
                 </div>
 
                 <div className="form-group w-25">
-                    <label htmlFor="exampleInputPassword1">Password</label>
+                    <label htmlFor="exampleInputPassword1">Пароль</label>
                     <input type="password" value={password} onChange={({target}) => setPassword(target.value)} className="form-control" id="exampleInputPassword"/>
                 </div>
 
                 <div className="form-group w-25">
-                    <label htmlFor="exampleInputEmail1">address</label>
+                    <label htmlFor="exampleInputEmail1">Адрес</label>
                     <input type="text" value={address} onChange={({target}) => setAddress(target.value)} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
                 </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-primary">Отправить</button>
       </form>
     </div>
   );

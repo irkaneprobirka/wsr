@@ -4,7 +4,7 @@ import abi from "./abi.json";
 class RequestService {
 
     web3 = new Web3("http://localhost:8545")
-    contract = new this.web3.eth.Contract(abi, "0x6d925938Edb8A16B3035A4cF34FAA090f490202a")
+    contract = new this.web3.eth.Contract(abi, "0x5FbDB2315678afecb367f032d93F642f64180aa3")
 
     async register(_login, _name, _password, _address) {
         try{
@@ -111,19 +111,35 @@ class RequestService {
 
 
     async adminToBuyer(_address){
-        return await this.contract.methods.adminToBuyer().send({from: _address})
+        try{
+            return await this.contract.methods.adminToBuyer().send({from: _address})
+        }catch(e){
+            console.log(e)
+        }
     }
 
     async buyerToAdmin(_address){
-        return await this.contract.methods.buyerToAdmin().send({from: _address})
+        try{
+            return await this.contract.methods.buyerToAdmin().send({from: _address})
+        }catch(e){
+            console.log(e)
+        }
     }
     
     async sellerToBuyer(_address){
-        return await this.contract.methods.sellerToBuyer().send({from: _address})
+        try{
+            return await this.contract.methods.sellerToBuyer().send({from: _address})
+        }catch(e){
+            console.log(e)
+        }
     }
 
     async buyerToSeller(_address){
-        return await this.contract.methods.buyerToSeller().send({from: _address})
+        try{
+            return await this.contract.methods.buyerToSeller().send({from: _address})
+        }catch(e){
+            console.log(e)
+        }
     }
 
     async addComm(_text, _shopId, _point, _address){

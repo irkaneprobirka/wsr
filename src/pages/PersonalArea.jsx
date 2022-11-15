@@ -10,6 +10,10 @@ import { ShopReturn } from "../Components/ShopReturn";
 import { AdminReturn } from "../Components/AdminReturn";
 import { RequestReturn } from "../Components/RequestReturn";
 import { TakeRequest } from "../Components/TakeRequest";
+import { AdminToBuyer } from "../Components/AdminToBuyer";
+import { BuyerToAdmin } from "../Components/BuyerToAdmin";
+import { SellerToBuyer } from "../Components/SellerToBuyer";
+import { BuyerToSeller } from "../Components/BuyerToSeller";
 
 export const PersonalArea = () => {
 
@@ -21,7 +25,7 @@ export const PersonalArea = () => {
 
         <div>
             <center>
-                <p>Ваш логин: {_login}<br />
+                <p> Ваш логин: {_login}<br />
                     Вашe имя: {_name}<br />
                     Ваш адрес: {_address}<br />
                     Ваша роль: {_role}<br />
@@ -30,8 +34,10 @@ export const PersonalArea = () => {
                     Временная роль: {_tempRole}
                 </p>
                 {
-                    (_role == 3) ? (
+                    (_tempRole == 3) ? (
                         <div>
+                            <AdminToBuyer address={_address} />
+
                             <ChangeRole address={_address} />
 
                             <SetAdmin address={_address} />
@@ -48,7 +54,22 @@ export const PersonalArea = () => {
 
                             <TakeRequest address={_address} />
 
-                        </div>) : (
+                        </div>) : (_tempRole == 1 && _role == 3) ? (
+                        
+                        <div>
+                            <BuyerToAdmin address={_address} />
+
+                            <SendRequest address={_address} />
+                        </div>
+                    ) : (_tempRole == 1 && _role == 2) ? (
+                        <div>
+                            <BuyerToSeller address={_address}/>
+                        </div>
+                    ) : (_tempRole == 2)?(
+                        <div>
+                            <SellerToBuyer address={_address}/>
+                        </div>
+                    ) :(
                         <SendRequest address={_address} />
                     )
                 }

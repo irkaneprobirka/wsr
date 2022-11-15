@@ -19,7 +19,7 @@ export const SendRequest = ({address}) => {
             <form onSubmit={formSendRequest}>
 
                 <div className="form-group w-25">
-                    <label htmlFor="exampleInputEmail1">Shop Id</label>
+                    <label htmlFor="exampleInputEmail1">Id магазина</label>
                     <input type="text" value = {shopId} onChange={({target})=> setShopId(target.value)} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
                 </div>
 
