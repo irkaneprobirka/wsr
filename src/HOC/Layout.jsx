@@ -1,5 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import { ProviderContext } from "../Context/ProviderContext";
+
 
 export const Layout = ({children}) => {
 
@@ -14,10 +16,14 @@ export const Layout = ({children}) => {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto">
                     <li className="nav-item active mr-4">
-                    <Link to="/">Register</Link>
+                    <Link to="/">Регистрация</Link>
                     </li>
                     <li className="nav-item mr-4">
-                    <Link to="/AuthUser">Auth</Link>
+                    <Link to="/AuthUser">Авторизация</Link>
+                    </li>
+
+                    <li className="nav-item mr-4">
+                    <Link to="/PersonalArea">Личный кабинет</Link>
                     </li>
 
                     </ul>

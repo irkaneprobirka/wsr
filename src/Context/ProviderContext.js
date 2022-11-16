@@ -32,6 +32,18 @@ export const ProviderContextWrapper = ({children}) => {
         })
     }
     
+    const [comm, setComm] = useState("")
+
+    const comms = (_parent, _point, _text ) => {
+
+        setComm({
+            _parent,
+            _point,
+            _text
+        })
+
+    }
+
     const logout = () => {
         setUserData(initUserValues)
     }
@@ -40,7 +52,8 @@ export const ProviderContextWrapper = ({children}) => {
     const providerValue = {
         logIn,
         userData,
-        logout
+        logout,
+        comms
     };
 
     return(

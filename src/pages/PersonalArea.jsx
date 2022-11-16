@@ -14,6 +14,9 @@ import { AdminToBuyer } from "../Components/AdminToBuyer";
 import { BuyerToAdmin } from "../Components/BuyerToAdmin";
 import { SellerToBuyer } from "../Components/SellerToBuyer";
 import { BuyerToSeller } from "../Components/BuyerToSeller";
+import { AddComm } from "../Components/AddComm";
+import { BackComm } from "../Components/BackComm";
+import { AddAnswer } from "../Components/AddAnswer";
 
 export const PersonalArea = () => {
 
@@ -25,14 +28,18 @@ export const PersonalArea = () => {
 
         <div>
             <center>
+                {(_tempRole != 0 || _role != 0) ? (
                 <p> Ваш логин: {_login}<br />
                     Вашe имя: {_name}<br />
                     Ваш адрес: {_address}<br />
                     Ваша роль: {_role}<br />
                     Ваш баланс: {_balance}<br />
                     Ваш номер магазина: {_shopId}<br />
-                    Временная роль: {_tempRole}
-                </p>
+                    Временная роль: {_tempRole}<br />
+                </p>): (
+                    <div>
+                <BackComm address={_address}/><br />
+                </div>)}
                 {
                     (_tempRole == 3) ? (
                         <div>
@@ -70,7 +77,17 @@ export const PersonalArea = () => {
                             <SellerToBuyer address={_address}/>
                         </div>
                     ) :(
+                        <div>
+
+                        <AddComm address={_address}/>
+
                         <SendRequest address={_address} />
+
+                        <BackComm address={_address}/><br />
+
+                        <AddAnswer address={_address} />
+
+                        </div>
                     )
                 }
             </center>

@@ -143,15 +143,27 @@ class RequestService {
     }
 
     async addComm(_text, _shopId, _point, _address){
-        return await this.contract.methods.addComm(_text, _shopId. _point).send({from: _address})
+        try{
+            return await this.contract.methods.addComm(_text, _shopId, _point).send({from: _address})
+        }catch(e){
+            console.log(e)
+        }
     }
 
     async addAnswer(_parent, _shopId, _text, _address){
-        return await this.contract.methods.addAnswer(_parent, _shopId, _text).send({from: _address})
+        try{
+            return await this.contract.methods.addAnswer(_parent, _shopId, _text).send({from: _address})
+        }catch(e){
+            console.log(e)
+        }
     }
 
     async backComm(_shopId, _address){
-        return await this.contract.methods.backComm(_shopId).call({from: _address})
+        try{
+            return await this.contract.methods.backComm(_shopId).call({from: _address})
+        }catch(e){
+            console.log(e)
+        }
     }
     
 }
