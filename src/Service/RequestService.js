@@ -4,7 +4,7 @@ import abi from "./abi.json";
 class RequestService {
 
     web3 = new Web3("http://localhost:8545")
-    contract = new this.web3.eth.Contract(abi, "0xED8CAB8a931A4C0489ad3E3FB5BdEA84f74fD23E")
+    contract = new this.web3.eth.Contract(abi, "0x9A7848b9E60C7619f162880c7CA5Cbca80998034")
 
     async register(_login, _name, _password, _address) {
         try{
@@ -160,7 +160,7 @@ class RequestService {
 
     async backComms(_shopId, _address){
         try{
-            return await this.contract.methods.backComm(_shopId).call({from: _address})
+            return await this.contract.methods.backComms(_shopId).call({from: _address})
         }catch(e){
             console.log(e)
         }
@@ -169,6 +169,63 @@ class RequestService {
     async backAnswers(_parent, _address){
         try{
             return await this.contract.methods.backAnswers(_parent).call({from: _address})
+        }catch(e){
+            console.log(e)
+        }
+    }
+
+    async likeComm(_shopId, _commId, _address){
+        try{
+            return await this.contract.methods.likeComm(_shopId, _commId).send({from: _address})
+        }catch(e){
+            console.log(e)
+        }
+    }
+
+    async dislikeComm(_shopId, _commId, _address){
+        try{
+            return await this.contract.methods.dislikeComm(_shopId, _commId).send({from: _address})
+        }catch(e){
+            console.log(e)
+        }
+    }
+
+    async likeAnswer(_parent, _answerId, _address){
+        try{
+            return await this.contract.methods.likeAnswer(_parent, _answerId).send({from: _address})
+        }catch(e){
+            console.log(e)
+        }
+    }
+
+    async dislikeAnswer(_parent, _answerId, _address){
+        try{
+            return await this.contract.methods.dislikeAnswer(_parent, _answerId).send({from: _address})
+        }catch(e){
+            console.log(e)
+        }
+    }
+
+    async giveLoan(_index, _solut, _address){
+        try{
+            return await this.contract.methods.giveLoan(_index, _solut).send({from: _address})
+        }catch(e){
+            console.log(e)
+        }
+    }
+
+    async requestLoan(_address){
+
+        try{
+            return await this.contract.methods.requestLoan().send({from: _address})
+        }catch(e){
+            console.log(e)
+        }
+    }
+
+    async returnLoans(_address){
+        try{
+            return await this.contract.methods.returnLoans().call({from: _address})
         }catch(e){
             console.log(e)
         }

@@ -18,6 +18,13 @@ import { AddComm } from "../Components/AddComm";
 import { BackComm } from "../Components/BackComm";
 import { AddAnswer } from "../Components/AddAnswer";
 import { BackAnswer } from "../Components/BackAnswer";
+import { LikeComm } from "../Components/LikeComm";
+import { DislikeComm } from "../Components/DislikeComm";
+import { LikeAnswer } from "../Components/LikeAnswer";
+import { DislikeAnswer } from "../Components/DislikeAnswer";
+import { GiveLoan } from "../Components/GiveLoan";
+import { ReturnLoans } from "../Components/ReturnLoans";
+import { RequestLoan } from "../Components/RequestLoan";
 
 export const PersonalArea = () => {
 
@@ -102,7 +109,17 @@ export const PersonalArea = () => {
 
                             <AddAnswer address={_address} />
                         </div>
-                    ) :(
+                    ) : (_role == 5 ) ? (
+                        <div>
+                            <GiveLoan address={_address} />
+
+                            <ReturnLoans address={_address} />
+                        </div>
+                    ) : (_role == 6 ) ? (
+                        <div>
+                            <RequestLoan address={_address} />
+                        </div>
+                    ) : (
                         <div>
 
                         <AddComm address={_address}/>
@@ -114,6 +131,14 @@ export const PersonalArea = () => {
                         <AddAnswer address={_address} />
 
                         <BackAnswer address={_address} />
+
+                        <LikeComm address={_address} />
+
+                        <DislikeComm address={_address} />
+
+                        <LikeAnswer address={_address} />
+
+                        <DislikeAnswer address={_address} />
 
                         </div>
                     )

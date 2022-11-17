@@ -7,7 +7,7 @@ export const AddAnswer = ({address}) => {
     const [shopId, setShopId] = useState("")
     const [text, setText] = useState("")
 
-    const formAddAnswer = async(e) => {
+    const formAddAnswer = async (e) => {
 
         e.preventDefault();
         const allAnswer = await RequestService.addAnswer(parent, shopId, text, address)
@@ -19,7 +19,7 @@ export const AddAnswer = ({address}) => {
             <h1>Добавить ответ на комметарий</h1>
             <form onSubmit={formAddAnswer}>
                 <div className="form-group w-25">
-                    <label htmlFor="exampleInputEmail1">Логин пользователя</label>
+                    <label htmlFor="exampleInputEmail1">id комментария</label>
                     <input type="text" value = {parent} onChange={({target})=> setParent(target.value)} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
                 </div>
 
