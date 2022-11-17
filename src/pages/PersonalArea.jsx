@@ -17,6 +17,7 @@ import { BuyerToSeller } from "../Components/BuyerToSeller";
 import { AddComm } from "../Components/AddComm";
 import { BackComm } from "../Components/BackComm";
 import { AddAnswer } from "../Components/AddAnswer";
+import { BackAnswer } from "../Components/BackAnswer";
 
 export const PersonalArea = () => {
 
@@ -67,14 +68,39 @@ export const PersonalArea = () => {
                             <BuyerToAdmin address={_address} />
 
                             <SendRequest address={_address} />
+
+                            <AddComm address={_address}/>
+
+                            <BackComm address={_address}/><br />
+
+                            <AddAnswer address={_address} />
+
+
                         </div>
                     ) : (_tempRole == 1 && _role == 2) ? (
                         <div>
                             <BuyerToSeller address={_address}/>
+
+                            
+                            <SendRequest address={_address} />
+
+                            <AddComm address={_address}/>
+
+                            <BackComm address={_address}/><br />
+
+                            <AddAnswer address={_address} />
                         </div>
                     ) : (_tempRole == 2)?(
                         <div>
                             <SellerToBuyer address={_address}/>
+
+                            <SendRequest address={_address} />
+
+                            <AddComm address={_address}/>
+
+                            <BackComm address={_address}/><br />
+
+                            <AddAnswer address={_address} />
                         </div>
                     ) :(
                         <div>
@@ -86,6 +112,8 @@ export const PersonalArea = () => {
                         <BackComm address={_address}/><br />
 
                         <AddAnswer address={_address} />
+
+                        <BackAnswer address={_address} />
 
                         </div>
                     )

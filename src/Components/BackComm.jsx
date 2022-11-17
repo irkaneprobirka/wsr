@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import RequestService from "../Service/RequestService";
-import { ProviderContext } from "../Context/ProviderContext";
-import { useContext } from "react";
 
 export const BackComm = ({ address }) => {
 
@@ -12,7 +10,7 @@ export const BackComm = ({ address }) => {
     const formBackComm = async (e) => {
 
         e.preventDefault();
-        const allComms = await RequestService.backComm(shopId, address)
+        const allComms = await RequestService.backComms(shopId, address)
         if (allComms.length > 0) {
             console.log(allComms)
             setAllComments(allComms)
@@ -42,20 +40,27 @@ export const BackComm = ({ address }) => {
                     <div>
                         {
                             <div>
-                                <table class="table">
+                                <table class="table w-50">
                                     <thead>
                                         <tr>
-                                            <th scope="col">id Пользователя</th>
+                                            <th scope="col">id</th>
+                                            <th scope="col">Логин</th>
                                             <th scope="col">Текст</th>
+                                            <th scope="col">Лайк</th>
+                                            <th scope="col">Дизлайк</th>
                                             <th scope="col">Балл</th>
+
                                         </tr>
                                     </thead>
                                     <tbody>
                                         
-                                            {allComments.map(({parent, text, point}, idx) => (
+                                            {allComments.map(({id, parent, text, likes, dislikes, point}, idx) => (
                                             <tr>
-                                                <th scope="row">{parent}</th>
+                                                <th scope="row">{id}</th>
+                                                <td>{parent}</td>
                                                 <td>{text}</td>
+                                                <td>{likes}</td>
+                                                <td>{dislikes}</td>
                                                 <td>{point}</td>
                                             </tr>
                                         ))}

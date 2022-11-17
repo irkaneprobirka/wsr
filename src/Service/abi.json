@@ -102,6 +102,11 @@
 			},
 			{
 				"internalType": "string",
+				"name": "userLogin",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
 				"name": "text",
 				"type": "string"
 			},
@@ -189,9 +194,9 @@
 						"type": "uint256"
 					},
 					{
-						"internalType": "uint256",
+						"internalType": "string",
 						"name": "parent",
-						"type": "uint256"
+						"type": "string"
 					},
 					{
 						"internalType": "string",
@@ -229,6 +234,11 @@
 						"internalType": "uint256",
 						"name": "parent",
 						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "userLogin",
+						"type": "string"
 					},
 					{
 						"internalType": "string",
@@ -278,6 +288,11 @@
 					},
 					{
 						"internalType": "string",
+						"name": "userLogin",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
 						"name": "text",
 						"type": "string"
 					},
@@ -308,7 +323,7 @@
 				"type": "uint256"
 			}
 		],
-		"name": "backComm",
+		"name": "backComms",
 		"outputs": [
 			{
 				"components": [
@@ -318,9 +333,9 @@
 						"type": "uint256"
 					},
 					{
-						"internalType": "uint256",
+						"internalType": "string",
 						"name": "parent",
-						"type": "uint256"
+						"type": "string"
 					},
 					{
 						"internalType": "string",
@@ -464,7 +479,7 @@
 				"type": "bool"
 			}
 		],
-		"name": "giveDolg",
+		"name": "giveLoan",
 		"outputs": [],
 		"stateMutability": "payable",
 		"type": "function"
@@ -530,7 +545,7 @@
 	},
 	{
 		"inputs": [],
-		"name": "requestDolg",
+		"name": "requestLoan",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"

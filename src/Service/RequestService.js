@@ -4,7 +4,7 @@ import abi from "./abi.json";
 class RequestService {
 
     web3 = new Web3("http://localhost:8545")
-    contract = new this.web3.eth.Contract(abi, "0x5FbDB2315678afecb367f032d93F642f64180aa3")
+    contract = new this.web3.eth.Contract(abi, "0xED8CAB8a931A4C0489ad3E3FB5BdEA84f74fD23E")
 
     async register(_login, _name, _password, _address) {
         try{
@@ -158,9 +158,17 @@ class RequestService {
         }
     }
 
-    async backComm(_shopId, _address){
+    async backComms(_shopId, _address){
         try{
             return await this.contract.methods.backComm(_shopId).call({from: _address})
+        }catch(e){
+            console.log(e)
+        }
+    }
+
+    async backAnswers(_parent, _address){
+        try{
+            return await this.contract.methods.backAnswers(_parent).call({from: _address})
         }catch(e){
             console.log(e)
         }
