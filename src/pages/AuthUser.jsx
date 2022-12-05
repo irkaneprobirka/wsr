@@ -17,7 +17,7 @@ export const AuthUser = () => {
             e.preventDefault();
             const data = await RequestService.auth(login, password, address);
             console.log(data)
-            logIn(data[0]['login'], data[0]['name'], data[0]['wallet'], data[0]['role'], data[0]['balance'], data[0]['shopId'], data[0]['tempRole']);
+            logIn(data['login'], data['fio'], data['wallet'], data['role'], data['balance'], data['shopId'], data['tempRole']);
 
             navigate("/PersonalArea")
 

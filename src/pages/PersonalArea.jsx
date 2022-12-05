@@ -25,6 +25,19 @@ import { DislikeAnswer } from "../Components/DislikeAnswer";
 import { GiveLoan } from "../Components/GiveLoan";
 import { ReturnLoans } from "../Components/ReturnLoans";
 import { RequestLoan } from "../Components/RequestLoan";
+import { CreateProduct } from "../Components/CreateProduct";
+import { GetProducts } from "../Components/GetProducts";
+import { GetRate } from "../Components/GetRate";
+import { RequestDelivery } from "../Components/RequestDelivery";
+import { GetDelivery } from "../Components/GetDelivery";
+import { AcceptPrice } from "../Components/AcceptPrice";
+import { AcceptDelivery } from "../Components/AcceptDelivery";
+import { OrderProduct } from "../Components/OrderProduct";
+import { GetMyDelivery } from "../GetMyDelivery";
+import { CancelOrder } from "../Components/CancelOrder";
+import { ReturnProduct } from "../Components/ReturnProduct";
+import { CheckReturn } from "../Components/CheckReturn";
+import { AcceptOrder } from "../Components/AcceptOrder";
 
 export const PersonalArea = () => {
 
@@ -37,17 +50,17 @@ export const PersonalArea = () => {
         <div>
             <center>
                 {(_tempRole != 0 || _role != 0) ? (
-                <p> Ваш логин: {_login}<br />
-                    Вашe имя: {_name}<br />
-                    Ваш адрес: {_address}<br />
-                    Ваша роль: {_role}<br />
-                    Ваш баланс: {_balance}<br />
-                    Ваш номер магазина: {_shopId}<br />
-                    Временная роль: {_tempRole}<br />
-                </p>): (
+                    <p> Ваш логин: {_login}<br />
+                        Вашe имя: {_name}<br />
+                        Ваш адрес: {_address}<br />
+                        Ваша роль: {_role}<br />
+                        Ваш баланс: {_balance}<br />
+                        Ваш номер магазина: {_shopId}<br />
+                        Временная роль: {_tempRole}<br />
+                    </p>) : (
                     <div>
-                <BackComm address={_address}/><br />
-                </div>)}
+                        <BackComm address={_address} /><br />
+                    </div>)}
                 {
                     (_tempRole == 3) ? (
                         <div>
@@ -70,76 +83,145 @@ export const PersonalArea = () => {
                             <TakeRequest address={_address} />
 
                         </div>) : (_tempRole == 1 && _role == 3) ? (
-                        
+
+                            <div>
+                                <BuyerToAdmin address={_address} />
+
+                                <SendRequest address={_address} />
+
+                                <AddComm address={_address} />
+
+                                <BackComm address={_address} /><br />
+
+                                <AddAnswer address={_address} />
+
+                                <BackAnswer address={_address} />
+                                
+                                <OrderProduct />
+
+                                <CancelOrder />
+
+                                <ReturnProduct />
+
+                            </div>
+                        ) : (_tempRole == 1 && _role == 2) ? (
+                            <div>
+                                <BuyerToSeller address={_address} />
+
+                                <SendRequest address={_address} />
+
+                                <AddComm address={_address} />
+
+                                <BackComm address={_address} /><br />
+
+                                <AddAnswer address={_address} />
+
+                                <BackAnswer address={_address} />
+
+                                <OrderProduct />
+
+                                <CancelOrder />
+
+                                <ReturnProduct />
+                            </div>
+                        ) :(_role ==1 || _tempRole == 1 ) ? 
+                        (
+                            <div>
+                                
+                                <SendRequest address={_address} />
+
+                                <AddComm address={_address} />
+
+                                <BackComm address={_address} /><br />
+
+                                <AddAnswer address={_address} />
+
+                                <OrderProduct />
+
+                                <CancelOrder />
+
+                                <ReturnProduct />
+
+                            </div>
+
+                        ) : (_tempRole == 2) ? (
+                            <div>
+                                <SellerToBuyer address={_address} />
+
+                                <SendRequest address={_address} />
+
+                                <AddComm address={_address} />
+
+                                <BackComm address={_address} /><br />
+
+                                <AddAnswer address={_address} />
+
+                                <AcceptOrder/>
+                            </div>
+                        ) : (_role == 5) ? (
+                            <div>
+                                <GiveLoan address={_address} />
+
+                                <ReturnLoans address={_address} />
+                            </div>
+                        ) : (_role == 6) ? (
+                            <div>
+                                <RequestLoan address={_address} />
+
+                                <GetProducts />
+
+                                <RequestDelivery />
+
+                                <GetMyDelivery />
+
+                                <AcceptPrice />
+                            </div>
+                        ) : (_role == 4 || _tempRole == 4) ? (
+
+                            <CreateProduct />
+
+                        ) : (
                         <div>
-                            <BuyerToAdmin address={_address} />
 
-                            <SendRequest address={_address} />
+                            {/* <AddComm address={_address} />
 
-                            <AddComm address={_address}/>
+                            <SendRequest address={_address} /> */}
 
-                            <BackComm address={_address}/><br />
+                            <BackComm address={_address} /><br />
+{/* 
+                            <AddAnswer address={_address} /> */}
 
-                            <AddAnswer address={_address} />
+                            <BackAnswer address={_address} />
+{/* 
+                            <LikeComm address={_address} />
 
+                            <DislikeComm address={_address} />
 
-                        </div>
-                    ) : (_tempRole == 1 && _role == 2) ? (
-                        <div>
-                            <BuyerToSeller address={_address}/>
+                            <LikeAnswer address={_address} />
 
-                            
-                            <SendRequest address={_address} />
+                            <DislikeAnswer address={_address} />
 
-                            <AddComm address={_address}/>
+                            <GetProducts /> */}
 
-                            <BackComm address={_address}/><br />
+                            <GetRate />
 
-                            <AddAnswer address={_address} />
-                        </div>
-                    ) : (_tempRole == 2)?(
-                        <div>
-                            <SellerToBuyer address={_address}/>
+                            {/* <RequestDelivery />
 
-                            <SendRequest address={_address} />
+                            <GetDelivery />
 
-                            <AddComm address={_address}/>
+                            <GetMyDelivery />
 
-                            <BackComm address={_address}/><br />
+                            <AcceptPrice />
 
-                            <AddAnswer address={_address} />
-                        </div>
-                    ) : (_role == 5 ) ? (
-                        <div>
-                            <GiveLoan address={_address} />
+                            <CancelOrder />
 
-                            <ReturnLoans address={_address} />
-                        </div>
-                    ) : (_role == 6 ) ? (
-                        <div>
-                            <RequestLoan address={_address} />
-                        </div>
-                    ) : (
-                        <div>
+                            <ReturnProduct />
 
-                        <AddComm address={_address}/>
+                            <AcceptDelivery />
 
-                        <SendRequest address={_address} />
+                            <OrderProduct />
 
-                        <BackComm address={_address}/><br />
-
-                        <AddAnswer address={_address} />
-
-                        <BackAnswer address={_address} />
-
-                        <LikeComm address={_address} />
-
-                        <DislikeComm address={_address} />
-
-                        <LikeAnswer address={_address} />
-
-                        <DislikeAnswer address={_address} />
-
+                            <AcceptOrder/> */}
                         </div>
                     )
                 }

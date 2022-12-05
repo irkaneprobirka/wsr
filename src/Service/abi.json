@@ -2,45 +2,12 @@
 	{
 		"inputs": [
 			{
-				"internalType": "uint256",
-				"name": "_parent",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_shopId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "_text",
-				"type": "string"
+				"internalType": "address",
+				"name": "_wallet",
+				"type": "address"
 			}
 		],
-		"name": "addAnswer",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "_text",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_shopId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_point",
-				"type": "uint256"
-			}
-		],
-		"name": "addComm",
+		"name": "addAdmin",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -49,7 +16,7 @@
 		"inputs": [
 			{
 				"internalType": "address",
-				"name": "_shopAddress",
+				"name": "_address",
 				"type": "address"
 			},
 			{
@@ -65,21 +32,14 @@
 	},
 	{
 		"inputs": [],
+		"name": "adminBack",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
 		"name": "adminToBuyer",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "buyerToAdmin",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "buyerToSeller",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -106,101 +66,11 @@
 		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "_shopId",
+				"name": "_id",
 				"type": "uint256"
 			}
 		],
 		"name": "deleteShop",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_parent",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_answerId",
-				"type": "uint256"
-			}
-		],
-		"name": "dislikeAnswer",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_shopId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_commId",
-				"type": "uint256"
-			}
-		],
-		"name": "dislikeComm",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_index",
-				"type": "uint256"
-			},
-			{
-				"internalType": "bool",
-				"name": "_solut",
-				"type": "bool"
-			}
-		],
-		"name": "giveLoan",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_parent",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_answerId",
-				"type": "uint256"
-			}
-		],
-		"name": "likeAnswer",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_shopId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_commId",
-				"type": "uint256"
-			}
-		],
-		"name": "likeComm",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -214,7 +84,7 @@
 			},
 			{
 				"internalType": "string",
-				"name": "_name",
+				"name": "_fio",
 				"type": "string"
 			},
 			{
@@ -230,7 +100,7 @@
 	},
 	{
 		"inputs": [],
-		"name": "requestLoan",
+		"name": "sellerBack",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -258,21 +128,8 @@
 	{
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "_address",
-				"type": "address"
-			}
-		],
-		"name": "setAdmin",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
 				"internalType": "uint256",
-				"name": "_index",
+				"name": "_id",
 				"type": "uint256"
 			},
 			{
@@ -284,60 +141,6 @@
 		"name": "takeRequest",
 		"outputs": [],
 		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"stateMutability": "nonpayable",
-		"type": "constructor"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "answerComsMap",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "id",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "parent",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "userLogin",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "text",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "likes",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "dislikes",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -358,19 +161,19 @@
 			{
 				"components": [
 					{
-						"internalType": "uint256",
-						"name": "id",
-						"type": "uint256"
-					},
-					{
 						"internalType": "string",
 						"name": "login",
 						"type": "string"
 					},
 					{
 						"internalType": "string",
-						"name": "name",
+						"name": "fio",
 						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "balance",
+						"type": "uint256"
 					},
 					{
 						"internalType": "address",
@@ -380,11 +183,6 @@
 					{
 						"internalType": "uint256",
 						"name": "role",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "balance",
 						"type": "uint256"
 					},
 					{
@@ -401,201 +199,73 @@
 				"internalType": "struct myContract.User",
 				"name": "",
 				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"name": "loginMap",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "passwordMap",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "reqMap",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
 			},
 			{
-				"components": [
-					{
-						"internalType": "uint256",
-						"name": "id",
-						"type": "uint256"
-					},
-					{
-						"internalType": "string",
-						"name": "parent",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "text",
-						"type": "string"
-					},
-					{
-						"internalType": "uint256",
-						"name": "likes",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "dislikes",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "point",
-						"type": "uint256"
-					}
-				],
-				"internalType": "struct myContract.Coms[]",
-				"name": "",
-				"type": "tuple[]"
+				"internalType": "address",
+				"name": "wallet",
+				"type": "address"
 			},
 			{
-				"components": [
-					{
-						"internalType": "uint256",
-						"name": "id",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "parent",
-						"type": "uint256"
-					},
-					{
-						"internalType": "string",
-						"name": "userLogin",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "text",
-						"type": "string"
-					},
-					{
-						"internalType": "uint256",
-						"name": "likes",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "dislikes",
-						"type": "uint256"
-					}
-				],
-				"internalType": "struct myContract.Answer[]",
-				"name": "",
-				"type": "tuple[]"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
 				"internalType": "uint256",
-				"name": "_parent",
+				"name": "shopId",
 				"type": "uint256"
-			}
-		],
-		"name": "backAnswers",
-		"outputs": [
-			{
-				"components": [
-					{
-						"internalType": "uint256",
-						"name": "id",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "parent",
-						"type": "uint256"
-					},
-					{
-						"internalType": "string",
-						"name": "userLogin",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "text",
-						"type": "string"
-					},
-					{
-						"internalType": "uint256",
-						"name": "likes",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "dislikes",
-						"type": "uint256"
-					}
-				],
-				"internalType": "struct myContract.Answer[]",
-				"name": "",
-				"type": "tuple[]"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_shopId",
-				"type": "uint256"
-			}
-		],
-		"name": "backComms",
-		"outputs": [
-			{
-				"components": [
-					{
-						"internalType": "uint256",
-						"name": "id",
-						"type": "uint256"
-					},
-					{
-						"internalType": "string",
-						"name": "parent",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "text",
-						"type": "string"
-					},
-					{
-						"internalType": "uint256",
-						"name": "likes",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "dislikes",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "point",
-						"type": "uint256"
-					}
-				],
-				"internalType": "struct myContract.Coms[]",
-				"name": "",
-				"type": "tuple[]"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_id",
-				"type": "uint256"
-			}
-		],
-		"name": "emplreturn",
-		"outputs": [
-			{
-				"internalType": "address[]",
-				"name": "",
-				"type": "address[]"
 			}
 		],
 		"stateMutability": "view",
@@ -615,13 +285,19 @@
 		"type": "function"
 	},
 	{
-		"inputs": [],
-		"name": "returnLoans",
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_id",
+				"type": "uint256"
+			}
+		],
+		"name": "returnEmpl",
 		"outputs": [
 			{
-				"internalType": "uint256[]",
+				"internalType": "address[]",
 				"name": "",
-				"type": "uint256[]"
+				"type": "address[]"
 			}
 		],
 		"stateMutability": "view",
@@ -639,17 +315,52 @@
 						"type": "uint256"
 					},
 					{
+						"internalType": "address",
+						"name": "wallet",
+						"type": "address"
+					},
+					{
 						"internalType": "uint256",
 						"name": "shopId",
 						"type": "uint256"
-					},
-					{
-						"internalType": "address",
-						"name": "userAddress",
-						"type": "address"
 					}
 				],
 				"internalType": "struct myContract.Request[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "returnShops",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "city",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "wallet",
+						"type": "address"
+					},
+					{
+						"internalType": "address[]",
+						"name": "employees",
+						"type": "address[]"
+					}
+				],
+				"internalType": "struct myContract.Shop[]",
 				"name": "",
 				"type": "tuple[]"
 			}
@@ -687,41 +398,6 @@
 		"type": "function"
 	},
 	{
-		"inputs": [],
-		"name": "shopreturn",
-		"outputs": [
-			{
-				"components": [
-					{
-						"internalType": "uint256",
-						"name": "id",
-						"type": "uint256"
-					},
-					{
-						"internalType": "string",
-						"name": "city",
-						"type": "string"
-					},
-					{
-						"internalType": "address",
-						"name": "wallet",
-						"type": "address"
-					},
-					{
-						"internalType": "address[]",
-						"name": "employees",
-						"type": "address[]"
-					}
-				],
-				"internalType": "struct myContract.Shop[]",
-				"name": "",
-				"type": "tuple[]"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
 		"inputs": [
 			{
 				"internalType": "address",
@@ -732,19 +408,19 @@
 		"name": "userMap",
 		"outputs": [
 			{
-				"internalType": "uint256",
-				"name": "id",
-				"type": "uint256"
-			},
-			{
 				"internalType": "string",
 				"name": "login",
 				"type": "string"
 			},
 			{
 				"internalType": "string",
-				"name": "name",
+				"name": "fio",
 				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "balance",
+				"type": "uint256"
 			},
 			{
 				"internalType": "address",
@@ -754,11 +430,6 @@
 			{
 				"internalType": "uint256",
 				"name": "role",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "balance",
 				"type": "uint256"
 			},
 			{

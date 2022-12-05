@@ -4,7 +4,7 @@ import abi from "./abi.json";
 class RequestService {
 
     web3 = new Web3("http://localhost:8545")
-    contract = new this.web3.eth.Contract(abi, "0x9A7848b9E60C7619f162880c7CA5Cbca80998034")
+    contract = new this.web3.eth.Contract(abi, "0x5FbDB2315678afecb367f032d93F642f64180aa3")
 
     async register(_login, _name, _password, _address) {
         try{
